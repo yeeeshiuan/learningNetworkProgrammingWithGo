@@ -5,7 +5,6 @@ package main
 
 import (
     "net"
-    "os"
     "fmt"
     "io/ioutil"
 )
@@ -25,11 +24,4 @@ func getHeadInfo(service string) {
     checkError(err)
 
     fmt.Println(string(result))
-}
-
-func checkError(err error) {
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
-        os.Exit(1)
-    }
 }
