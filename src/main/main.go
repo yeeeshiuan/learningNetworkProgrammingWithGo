@@ -40,6 +40,8 @@ func main() {
                 getHeadInfo(os.Args[2])
             case "udpdaytimeclient":
                 udpDaytimeClient(os.Args[2])
+            case "ping":
+                ping(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -66,6 +68,9 @@ func help() {
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"resolve|lookupHost|lookupC\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"domain-name\"\n")
+
+    fmt.Fprintf(os.Stderr, "Usage: sudo %s \"ping\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "\"localhost\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
