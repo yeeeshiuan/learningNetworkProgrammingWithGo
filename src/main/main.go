@@ -25,6 +25,12 @@ func main() {
                 asn_time()
             case "asn_daytime_server":
                 asn_daytime_server()
+            case "savejson":
+                savejson()
+            case "loadjson":
+                loadjson()
+            case "jsonechoserver":
+                jsonEchoServer()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -52,6 +58,8 @@ func main() {
                 asn_str(os.Args[2])
             case "asn_daytime_client":
                 asn_daytime_client(os.Args[2])
+            case "jsonechoclient":
+                jsonEchoClient(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -71,7 +79,8 @@ func main() {
 }
 
 func help() {
-    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer|threadedEchoServer|udpDaytimeServer|asn_time|asn_daytime_server\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer|threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON|jsonEchoServer\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -88,7 +97,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: sudo %s \"ping\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"localhost\"\n")
 
-    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client|jsonEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"lookupport\" \"network-type\" ", os.Args[0])
