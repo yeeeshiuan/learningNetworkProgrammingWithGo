@@ -21,6 +21,10 @@ func main() {
                 threadedEchoServer()
             case "udpdaytimeserver":
                 udpDaytimeServer()
+            case "asn_time":
+                asn_time()
+            case "asn_daytime_server":
+                asn_daytime_server()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -42,6 +46,12 @@ func main() {
                 udpDaytimeClient(os.Args[2])
             case "ping":
                 ping(os.Args[2])
+            case "asn_number":
+                asn_number(os.Args[2])
+            case "asn_str":
+                asn_str(os.Args[2])
+            case "asn_daytime_client":
+                asn_daytime_client(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -61,10 +71,16 @@ func main() {
 }
 
 func help() {
-    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer|threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer|threadedEchoServer|udpDaytimeServer|asn_time|asn_daytime_server\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
+
+    fmt.Fprintf(os.Stderr, "Usage: %s \"ASN_number\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "\"number\"\n")
+
+    fmt.Fprintf(os.Stderr, "Usage: %s \"ASN_str\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "\"string\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"resolve|lookupHost|lookupC\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"domain-name\"\n")
@@ -72,7 +88,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: sudo %s \"ping\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"localhost\"\n")
 
-    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"lookupport\" \"network-type\" ", os.Args[0])
