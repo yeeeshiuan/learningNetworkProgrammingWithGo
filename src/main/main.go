@@ -31,6 +31,12 @@ func main() {
                 loadjson()
             case "jsonechoserver":
                 jsonEchoServer()
+            case "savegob":
+                savegob()
+            case "loadgob":
+                loadgob()
+            case "gobechoserver":
+                gobEchoServer()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -60,6 +66,8 @@ func main() {
                 asn_daytime_client(os.Args[2])
             case "jsonechoclient":
                 jsonEchoClient(os.Args[2])
+            case "gobechoclient":
+                gobEchoClient(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -79,8 +87,10 @@ func main() {
 }
 
 func help() {
-    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer|threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON|jsonEchoServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -97,7 +107,10 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: sudo %s \"ping\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"localhost\"\n")
 
-    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client|jsonEchoClient\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "\"host:port\"\n")
+
+    fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoClient|gobEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"lookupport\" \"network-type\" ", os.Args[0])
