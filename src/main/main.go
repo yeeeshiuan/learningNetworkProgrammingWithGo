@@ -37,6 +37,8 @@ func main() {
                 loadgob()
             case "gobechoserver":
                 gobEchoServer()
+            case "base64":
+                base_64()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -91,6 +93,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"base64\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
