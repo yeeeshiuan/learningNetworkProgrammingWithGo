@@ -39,6 +39,8 @@ func main() {
                 gobEchoServer()
             case "base64":
                 base_64()
+            case "ftpserver":
+                ftpServer()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -70,6 +72,8 @@ func main() {
                 jsonEchoClient(os.Args[2])
             case "gobechoclient":
                 gobEchoClient(os.Args[2])
+            case "ftpclient":
+                ftpClient(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -93,7 +97,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"base64\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -104,7 +108,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"ASN_str\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"string\"\n")
 
-    fmt.Fprintf(os.Stderr, "Usage: %s \"resolve|lookupHost|lookupC\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"resolve|lookupHost|lookupC|ftpClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"domain-name\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: sudo %s \"ping\" ", os.Args[0])

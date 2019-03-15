@@ -12,7 +12,7 @@ import (
 
 func base_64() {
 
-    eightBitData := []byte{'1', '9', 'a', 'z', 'A', 'Z', 1, 128}
+    eightBitData := []byte{'1', '9', 'a', 'z', 'A', 'Z', 1, '0'}
     fmt.Println("bytes: ", eightBitData)
 
     bb := &bytes.Buffer{}
@@ -21,11 +21,11 @@ func base_64() {
     encoder.Close()
     fmt.Println("encode: ",bb)
 
-    dbuf := make([]byte, 12) // why 12 bytes? sometimes, the last tow byte are 0.
+    dbuf := make([]byte, 8) // why the last tow byte are 0?
     decoder := base64.NewDecoder(base64.StdEncoding, bb)
     decoder.Read(dbuf)
 
-    fmt.Print("decode: ")
+    fmt.Print("decode: ", dbuf)
     for _, ch := range dbuf {
         fmt.Print(ch)
     }
