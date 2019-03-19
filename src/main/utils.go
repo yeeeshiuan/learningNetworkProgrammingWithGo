@@ -7,6 +7,8 @@ import (
     "fmt"
 )
 
+const BOM = '\ufffe'
+
 type Person struct {
     Name  Name
     Email []Email

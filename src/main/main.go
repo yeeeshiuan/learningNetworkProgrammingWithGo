@@ -41,6 +41,8 @@ func main() {
                 base_64()
             case "ftpserver":
                 ftpServer()
+            case "utf16server":
+                utf16Server()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -74,6 +76,8 @@ func main() {
                 gobEchoClient(os.Args[2])
             case "ftpclient":
                 ftpClient(os.Args[2])
+            case "utf16client":
+                utf16Client(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -97,7 +101,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer|utf16Server\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -116,7 +120,8 @@ func help() {
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
-
+    fmt.Fprintf(os.Stderr, "Usage: %s \"utf16Client\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "\"host:port\"\n")
     fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoClient|gobEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
 
