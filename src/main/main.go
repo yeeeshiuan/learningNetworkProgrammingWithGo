@@ -110,12 +110,12 @@ func main() {
 
 func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"help|daytimeServer|simpleEchoServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer|utf16Server|md5Hash\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"blowfishSecurity|genRSAKeys|loadRSAKeys\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"encryptionByRSA|decryptingByRSA\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"base64|ftpServer|utf16Server|md5Hash\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"blowfishSecurity|genRSAKeys|loadRSAKeys\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"encryptionByRSA|decryptingByRSA\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -134,9 +134,9 @@ func help() {
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
-    fmt.Fprintf(os.Stderr, "Usage: %s \"utf16Client\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"utf16Client\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
-    fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoClient|gobEchoClient\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"jsonEchoClient|gobEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"lookupport\" \"network-type\" ", os.Args[0])

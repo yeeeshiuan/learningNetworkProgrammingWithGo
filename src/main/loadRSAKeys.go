@@ -5,9 +5,7 @@ package main
 
 import (
     "crypto/rsa"
-    "encoding/gob"
     "fmt"
-    "os"
 )
 
 func loadRSAKeys() {
@@ -22,13 +20,4 @@ func loadRSAKeys() {
 
     fmt.Println("Public key modulus", publicKey.N.String())
     fmt.Println("Public key exponent", publicKey.E)
-}
-
-func loadKey(fileName string, key interface{}) {
-    inFile, err := os.Open(fileName)
-    checkError(err)
-    decoder := gob.NewDecoder(inFile)
-    err = decoder.Decode(key)
-    checkError(err)
-    inFile.Close()
 }
