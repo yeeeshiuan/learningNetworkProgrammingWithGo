@@ -55,6 +55,10 @@ func main() {
                 encryptionByRSA()
             case "decryptingbyrsa":
                 decryptingByRSA()
+            case "genx509cert":
+                genX509Cert()
+            case "readx509cert":
+                readX509Cert()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -116,6 +120,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "       %s \"base64|ftpServer|utf16Server|md5Hash\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "       %s \"blowfishSecurity|genRSAKeys|loadRSAKeys\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "       %s \"encryptionByRSA|decryptingByRSA\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"genX509Cert|readX509Cert\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
