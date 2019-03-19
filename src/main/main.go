@@ -43,6 +43,10 @@ func main() {
                 ftpServer()
             case "utf16server":
                 utf16Server()
+            case "md5hash":
+                md5Hash()
+            case "blowfishsecurity":
+                blowfishSecurity()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -101,7 +105,8 @@ func help() {
     fmt.Fprintf(os.Stderr, "Usage: %s \"threadedEchoServer|udpDaytimeServer\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"asn_time|asn_daytime_server|saveJSON|loadJSON\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "Usage: %s \"jsonEchoServer|saveGob|loadGob|gobEchoServer\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer|utf16Server\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"base64|ftpServer|utf16Server|md5Hash\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "Usage: %s \"blowfishSecurity\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
