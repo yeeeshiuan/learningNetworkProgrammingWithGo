@@ -59,6 +59,8 @@ func main() {
                 genX509Cert()
             case "readx509cert":
                 readX509Cert()
+            case "tlsechoserver":
+                tlsEchoServer()
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -94,6 +96,8 @@ func main() {
                 ftpClient(os.Args[2])
             case "utf16client":
                 utf16Client(os.Args[2])
+            case "tlsechoclient":
+                tlsEchoClient(os.Args[2])
             default:
                 fmt.Printf("You wrong(%s).\n", os.Args[1])
         }
@@ -120,7 +124,7 @@ func help() {
     fmt.Fprintf(os.Stderr, "       %s \"base64|ftpServer|utf16Server|md5Hash\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "       %s \"blowfishSecurity|genRSAKeys|loadRSAKeys\" \n", os.Args[0])
     fmt.Fprintf(os.Stderr, "       %s \"encryptionByRSA|decryptingByRSA\" \n", os.Args[0])
-    fmt.Fprintf(os.Stderr, "       %s \"genX509Cert|readX509Cert\" \n", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"genX509Cert|readX509Cert|tlsEchoServer\" \n", os.Args[0])
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"ip|mask\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"ip-address\"\n")
@@ -139,7 +143,7 @@ func help() {
 
     fmt.Fprintf(os.Stderr, "Usage: %s \"getHeadInfo|udpDaytimeClient|asn_daytime_client\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
-    fmt.Fprintf(os.Stderr, "       %s \"utf16Client\" ", os.Args[0])
+    fmt.Fprintf(os.Stderr, "       %s \"utf16Client|tlsEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")
     fmt.Fprintf(os.Stderr, "       %s \"jsonEchoClient|gobEchoClient\" ", os.Args[0])
     fmt.Fprintf(os.Stderr, "\"host:port\"\n")

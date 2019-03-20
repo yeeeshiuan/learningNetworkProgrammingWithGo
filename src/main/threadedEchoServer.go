@@ -27,23 +27,3 @@ func threadedEchoServer() {
         go handleClient(conn)
     }
 }
-
-func handleClient(conn net.Conn) {
-    // close connection on exit
-    defer conn.Close()
-
-    var buf [512]byte
-    for {
-        // read upto 512 bytes
-        n, err := conn.Read(buf[0:])
-        if err != nil {
-            return
-        }
-        fmt.Println(string(buf[0:]))
-        // write the n bytes read
-        _, err2 := conn.Write(buf[0:n])
-        if err2 != nil {
-            return
-        }
-    }
-}

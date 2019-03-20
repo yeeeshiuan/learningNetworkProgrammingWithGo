@@ -9,6 +9,7 @@ import (
     "encoding/pem"
     "crypto/x509"
     "crypto/rsa"
+    "net"
 )
 
 const BOM = '\ufffe'
@@ -72,4 +73,21 @@ func loadKey(fileName string, key interface{}) {
     err = decoder.Decode(key)
     checkError(err)
     inFile.Close()
+}
+
+func handleClient(conn net.Conn) {
+    defer conn.Close()
+
+    var buf [512]byte
+    for {
+        fmt.Println("Trying to read")
+        n, err := conn.Read(buf[0:])
+        if err != nil {
+            fmt.Println(err)
+        }
+        _, err2 := conn.Write(buf[0:n])
+        if err2 != nil {
+            return
+        }
+    }
 }
